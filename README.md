@@ -110,4 +110,4 @@ Always get proper permission before scanning any target.
 
 ## 👨‍💻 Author
 **Ritik**
-GitHub: [@ritik](https://github.com/ritik)
+GitHub: [@ritik](https://github.com/RitikKumar-28)
