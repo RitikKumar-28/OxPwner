@@ -1,5 +1,5 @@
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-#   OXPOWER
+#   OXPWNER
 #   Offensive Security & Vulnerability Analysis Engine
 #   Author  : Ritik
 #   Version : 1.0.0
@@ -914,7 +914,7 @@ def full_scan(target, url=None):
     print(f"  {C.BOLD}{C.GRN}Technologies{C.RST}   : {', '.join(tech.keys()) or 'none'}")
 
     ts    = datetime.now().strftime("%Y%m%d_%H%M%S")
-    fname = f"oxpower_report_{ts}.json"
+    fname = f"oxpwner_report_{ts}.json"
     save_report(report, fname)
     print(f"\n  {C.PURP}{'━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━'}{C.RST}\n")
     return report
@@ -925,7 +925,7 @@ def full_scan(target, url=None):
 # ─────────────────────────────────────────────
 def build_parser():
     p = argparse.ArgumentParser(
-        description="OXPOWER — Offensive Security & Vulnerability Analysis Engine",
+        description="OXPWNER — Offensive Security & Vulnerability Analysis Engine",
         formatter_class=argparse.RawTextHelpFormatter,
     )
     sub = p.add_subparsers(dest="command")
@@ -965,13 +965,13 @@ def main():
         parser.print_help()
         print(
             f"\n  {C.GREY}Examples:{C.RST}\n"
-            f"  {C.CYAN}python3 oxpower.py full http://testphp.vulnweb.com{C.RST}\n"
-            f"  {C.CYAN}python3 oxpower.py ports 192.168.1.1 --range 1-1024{C.RST}\n"
-            f"  {C.CYAN}python3 oxpower.py url \"http://example.com/page?id=1\"{C.RST}\n"
-            f"  {C.CYAN}python3 oxpower.py subs example.com{C.RST}\n"
-            f"  {C.CYAN}python3 oxpower.py dns example.com{C.RST}\n"
-            f"  {C.CYAN}python3 oxpower.py dirs http://example.com{C.RST}\n"
-            f"  {C.CYAN}python3 oxpower.py tech http://example.com{C.RST}\n"
+            f"  {C.CYAN}python3 oxpwner.py full http://testphp.vulnweb.com{C.RST}\n"
+            f"  {C.CYAN}python3 oxpwner.py ports 192.168.1.1 --range 1-1024{C.RST}\n"
+            f"  {C.CYAN}python3 oxpwner.py url \"http://example.com/page?id=1\"{C.RST}\n"
+            f"  {C.CYAN}python3 oxpwner.py subs example.com{C.RST}\n"
+            f"  {C.CYAN}python3 oxpwner.py dns example.com{C.RST}\n"
+            f"  {C.CYAN}python3 oxpwner.py dirs http://example.com{C.RST}\n"
+            f"  {C.CYAN}python3 oxpwner.py tech http://example.com{C.RST}\n"
         )
         sys.exit(0)
 

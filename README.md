@@ -1,11 +1,11 @@
-# ⚡ OXPOWER — Offensive Security & Vulnerability Analysis Engine
+# ⚡ OXPWNER — Offensive Security & Vulnerability Analysis Engine
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20/%20Linux%20/%20MacOS-red)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Author](https://img.shields.io/badge/Author-Ritik-purple)
 
-OxPower is a highly advanced, automated CLI vulnerability and reconnaissance engine built for modern offensive security testing.
+OxPwner is a highly advanced, automated CLI vulnerability and reconnaissance engine built for modern offensive security testing.
 
 ---
 
@@ -41,7 +41,7 @@ sudo apt install git -y
 
 ### Step 4 — Clone the repository
 ```bash
-git clone https://github.com/ritik/OxPower.git
+git clone https://github.com/RitikKumar-28/OxPwner.git
 ```
 
 ### Step 5 — Go into the folder
