@@ -18,7 +18,7 @@ import subprocess
 import urllib.request
 import urllib.parse
 import urllib.error
-from datetime import datetime
+from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
@@ -201,7 +201,7 @@ def scan_port(host, port, timeout=0.2):
         return port, False, ""
 
 
-def port_scan(host, ports=None, threads=500):
+def port_scan(host, ports=None, threads=100):
     log.section("PORT SCANNER")
     ip = resolve_host(host)
     if not ip:
@@ -439,7 +439,7 @@ def test_ssl_tls(host, port=443):
                 exp = cert.get("notAfter", "")
                 if exp:
                     exp_dt = datetime.strptime(exp, "%b %d %H:%M:%S %Y %Z")
-                    days = (exp_dt - datetime.utcnow()).days
+                    days = (exp_dt - datetime.now(timezone.utc).replace(tzinfo=None)).days
                     if days < 30:
                         log.warn(f"Certificate expires in {days} days!")
                         issues.append(f"Cert expiry in {days} days")
@@ -547,7 +547,7 @@ SUBDOMAIN_WORDLIST = [
 ]
 
 
-def enumerate_subdomains(domain, threads=150):
+def enumerate_subdomains(domain, threads=100):
     log.section("SUBDOMAIN ENUMERATOR")
     log.info(f"Domain: {domain}  |  wordlist: {len(SUBDOMAIN_WORDLIST)} entries")
     found = []
